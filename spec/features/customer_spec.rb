@@ -26,10 +26,16 @@ feature "Customers", type: :feature do
     fill_in('Nome', with: customer_name)
     fill_in('Email', with: Faker::Internet.email)
     fill_in('Telefone', with: Faker::PhoneNumber.phone_number)
-    attach_file('Foto do Perfil', "#{Rails.root}/spec/fixtures/avatar.png")
+    attach_file('Foto do Perfil', "#{Rails.root}/spec/features/avatar.png")
     choose(option: [ 'S', 'N' ].sample)
     click_on('Criar Cliente')
     expect(page).to have_content('Cliente cadastrado com sucesso!')
     expect(Customer.last.name).to eq(customer_name)
+  end
+
+  scenario 'Cadastro de cliente - sad path' do
+    visit(new_customer_path)
+    click_on('Criar Cliente')
+    expect(page).to have_content('não pode ficar em branco')
   end
 end
