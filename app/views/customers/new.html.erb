@@ -1,8 +1,45 @@
 <h1>Novo Cliente</h1>
 
 <%= form_with model: @customer do |f| %>
+
+  <% if @customer.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+      <ul>
+        <% @customer.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div id='name'>
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
+  
+  <div id='email'>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  
+  <div id='phone'>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </div>
+  
+  <div id='avatar'>
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+  </div>
+
+  <div id='smoker'>
+    <%= f.label :smoker %>
+    <%= {'S': 'Sim', 'N': 'Não'}.each do |key, value| %>
+      <%= f.radio_button :smoker, key %> <%= value %>
+    <% end %>
+  </div>
+
+  <%= f.submit 'Criar Cliente' %>
 <% end %>
