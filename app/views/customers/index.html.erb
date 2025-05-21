@@ -2,12 +2,24 @@
 
 <h1>Listando Clientes</h1>
 
-<ul>
-  <% @customers.each do |c| %>
-    <li>
-      <%= c.name %>
-    </li>
-  <% end %>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <td>Nome</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |c| %>
+      <tr>
+        <td><%= c.name %></td>
+        <td><%= link_to 'Mostrar', customer_path(c) %></td>
+        <td><%= link_to 'Editar', edit_customer_path(c) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br/>
 
 <%= link_to 'Novo Cliente', new_customer_path %>
