@@ -56,6 +56,7 @@ group :development, :test do
   gem "capybara"
   gem "faker"
   gem "byebug"
+  gem 'selenium-webdriver', '~> 4.32'  
 end
 
 group :development do

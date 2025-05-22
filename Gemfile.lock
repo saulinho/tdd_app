@@ -260,6 +260,7 @@ GEM
     regexp_parser (2.10.0)
     reline (0.6.1)
       io-console (~> 0.5)
+    rexml (3.4.1)
     rspec-core (3.13.3)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.4)
@@ -306,7 +307,14 @@ GEM
       rubocop-performance (>= 1.24)
       rubocop-rails (>= 2.30)
     ruby-progressbar (1.13.0)
+    rubyzip (2.4.1)
     securerandom (0.4.1)
+    selenium-webdriver (4.32.0)
+      base64 (~> 0.2)
+      logger (~> 1.4)
+      rexml (~> 3.2, >= 3.2.5)
+      rubyzip (>= 1.2.2, < 3.0)
+      websocket (~> 1.0)
     solid_cable (3.0.8)
       actioncable (>= 7.2)
       activejob (>= 7.2)
@@ -363,6 +371,7 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
+    websocket (1.2.11)
     websocket-driver (0.7.7)
       base64
       websocket-extensions (>= 0.1.0)
@@ -399,6 +408,7 @@ DEPENDENCIES
   rails-i18n (~> 8.0.0)
   rspec-rails
   rubocop-rails-omakase
+  selenium-webdriver (~> 4.32)
   solid_cable
   solid_cache
   solid_queue
