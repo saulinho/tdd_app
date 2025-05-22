@@ -16,6 +16,7 @@
         <td><%= c.name %></td>
         <td><%= link_to 'Mostrar', customer_path(c) %></td>
         <td><%= link_to 'Editar', edit_customer_path(c) %></td>
+        <td><%= link_to 'Excluir', c, data: { turbo_method: :delete, turbo_confirm: "Você tem certeza que deseja excluir? "} %></td>
       </tr>
     <% end %>
   </tbody>
