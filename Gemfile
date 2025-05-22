@@ -57,6 +57,7 @@ group :development, :test do
   gem "faker"
   gem "byebug"
   gem 'selenium-webdriver', '~> 4.32'  
+  gem 'factory_bot_rails'
 end
 
 group :development do
